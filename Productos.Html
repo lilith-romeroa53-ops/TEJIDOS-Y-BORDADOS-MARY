@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - Tejidos y Bordados Mary</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #0b1223;
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background-color: var(--card);
+      border-bottom: 2px solid var(--brand);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--brand);
+    }
+
+    header img {
+      height: 60px;
+      margin-right: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a.activo,
+    nav ul li a:hover {
+      background-color: var(--brand);
+      color: #0f172a;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: var(--brand);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin: 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background-color: var(--card);
+      border-top: 2px solid var(--brand);
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="Images/LOGO.jpg" alt="Logo Tejidos y Bordados Mary">
+      <h1>Nuestros Productos</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html" class="activo">Productos</a></li>
+        <li><a href="cotizacion.html">Cotización</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <img src="Images/Servilleta chica.jpg" alt="Servilleta tejida">
+      <h3>Servilletas</h3>
+      <p>Chica: <strong>$70</strong></p>
+      <p>Grande: <strong>$120</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="Images/Tortilleros.jpg" alt="Tortillero de tela">
+      <h3>Tortilleros de tela</h3>
+      <p><strong>$120</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="Images/Mantel.jpg" alt="Mantel tejido">
+      <h3>Manteles</h3>
+      <p>Mediano: <strong>$1000</strong></p>
+      <p>Grande: <strong>$1500</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="Images/Decoraciones.jpg" alt="Decoraciones a crochet">
+      <h3>Decoraciones de crochet</h3>
+      <p><strong>$40 por pieza</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="Images/Bolsa.jpg" alt="Bolsa a crochet">
+      <h3>Bolsas a crochet</h3>
+      <p><strong>$250 - $300</strong> (según diseño)</p>
+    </div>
+
+    <div class="card">
+      <img src="Images/BLUSA (1).jpg" alt="Blusa a crochet">
+      <h3>Blusa</h3>
+      <p><strong>$600</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="Images/FALDA.jpg" alt="Falda a crochet">
+      <h3>Falda</h3>
+      <p><strong>$800</strong></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tejidos y Bordados Mary - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+
+
+
+

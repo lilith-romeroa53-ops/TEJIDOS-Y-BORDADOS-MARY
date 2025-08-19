@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización - Tejidos y Bordados Mary</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #0b1223;
+      --border: #1f2937;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --brand: #22c55e;
+      --brand-2: #16a34a;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background-color: var(--card);
+      border-bottom: 2px solid var(--brand);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--brand);
+    }
+
+    header img {
+      height: 60px;
+      margin-right: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav ul li a.activo,
+    nav ul li a:hover {
+      background-color: var(--brand);
+      color: #0f172a;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--brand);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: var(--brand);
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background-color: #1e293b;
+      color: var(--text);
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--brand-2);
+      color: #fff;
+    }
+
+    td {
+      background-color: #1e293b;
+    }
+
+    .btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 12px 20px;
+      background-color: var(--brand);
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--brand-2);
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      background-color: var(--card);
+      border-top: 2px solid var(--brand);
+      color: var(--muted);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <img src="Images/LOGO.jpg" alt="Logo Tejidos y Bordados Mary">
+      <h1>Cotización</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="cotizacion.html" class="activo">Cotización</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Generar Cotización</h2>
+
+    <label>Nombre del Cliente:</label>
+    <input type="text" id="nombreCliente">
+
+    <label>Correo:</label>
+    <input type="email" id="correoCliente">
+
+    <label>Teléfono:</label>
+    <input type="text" id="telefonoCliente">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio Unitario</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Servilleta Chica</td>
+          <td>70</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Servilleta Grande</td>
+          <td>120</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Tortillero de tela</td>
+          <td>120</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Mantel Mediano</td>
+          <td>1000</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Mantel Grande</td>
+          <td>1500</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Decoración Crochet</td>
+          <td>40</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Bolsa Crochet</td>
+          <td>250</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Blusa</td>
+          <td>600</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+        <tr>
+          <td>Falda</td>
+          <td>800</td>
+          <td><input type="number" min="0" value="0" class="cantidad"></td>
+          <td class="total">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="text-align:right; margin-top:15px;">Total General: $<span id="totalGeneral">0</span></h3>
+
+    <button class="btn" onclick="generarPDF()">Descargar PDF</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tejidos y Bordados Mary - Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const cantidades = document.querySelectorAll(".cantidad");
+    const totales = document.querySelectorAll(".total");
+    const totalGeneral = document.getElementById("totalGeneral");
+
+    cantidades.forEach((input, index) => {
+      input.addEventListener("input", () => {
+        calcular();
+      });
+    });
+
+    function calcular() {
+      let total = 0;
+      document.querySelectorAll("tbody tr").forEach((fila, i) => {
+        const precio = parseFloat(fila.cells[1].innerText);
+        const cantidad = parseInt(fila.querySelector(".cantidad").value) || 0;
+        const subtotal = precio * cantidad;
+        fila.querySelector(".total").innerText = subtotal;
+        total += subtotal;
+      });
+      totalGeneral.innerText = total;
+    }
+
+    function generarPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const nombre = document.getElementById("nombreCliente").value;
+      const correo = document.getElementById("correoCliente").value;
+      const telefono = document.getElementById("telefonoCliente").value;
+
+      doc.setFontSize(16);
+      doc.text("Cotización - Tejidos y Bordados Mary", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Cliente: ${nombre}`, 20, 30);
+      doc.text(`Correo: ${correo}`, 20, 37);
+      doc.text(`Teléfono: ${telefono}`, 20, 44);
+
+      let y = 60;
+      doc.text("Producto", 20, y);
+      doc.text("Precio", 80, y);
+      doc.text("Cantidad", 120, y);
+      doc.text("Total", 160, y);
+
+      y += 10;
+      document.querySelectorAll("tbody tr").forEach(fila => {
+        const producto = fila.cells[0].innerText;
+        const precio = fila.cells[1].innerText;
+        const cantidad = fila.querySelector(".cantidad").value;
+        const total = fila.querySelector(".total").innerText;
+
+        if (cantidad > 0) {
+          doc.text(producto, 20, y);
+          doc.text(`$${precio}`, 80, y);
+          doc.text(cantidad, 130, y);
+          doc.text(`$${total}`, 160, y);
+          y += 10;
+        }
+      });
+
+      y += 10;
+      doc.setFontSize(14);
+      doc.text(`Total General: $${totalGeneral.innerText}`, 20, y);
+
+      doc.save("Cotizacion.pdf");
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
